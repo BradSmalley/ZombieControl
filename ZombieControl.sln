@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombieController", "ZombieController\ZombieController.csproj", "{7FD146D2-4878-4464-BAE0-94A5A660EE4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZombieControl", "ZombieController\ZombieControl.csproj", "{7FD146D2-4878-4464-BAE0-94A5A660EE4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
