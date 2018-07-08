@@ -64,7 +64,7 @@ namespace ZombieControl.Controllers
                 db.Zombies.Attach(zombie);
                 db.Entry<Zombie>(zombie).State = EntityState.Modified;
                 db.SaveChanges();
-                return CreatedAtRoute("Get", new { id = zombie.ZombieId }, zombie);
+                return Ok(zombie);
             }
         }
         
