@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
-using ZombieController.Model;
+using ZombieControl.Model;
 
 namespace ZombieControl.TypeConverters
 {

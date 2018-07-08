@@ -1,12 +1,7 @@
-﻿using JetBrains.Annotations;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ZombieController.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using ZombieControl.Model;
 
-namespace ZombieController.Data
+namespace ZombieControl.Data
 {
     public partial class ZombieContext : DbContext
     {
@@ -17,6 +12,8 @@ namespace ZombieController.Data
         }
 
         public virtual DbSet<Zombie> Zombies { get; set; }
+
+        public virtual DbSet<Command> Commands { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

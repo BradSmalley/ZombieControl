@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using ZombieController.Model;
+using ZombieControl.Model;
 
 namespace ZombieControl.ModelBinders
 {

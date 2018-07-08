@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ZombieController.Data;
+using ZombieControl.Data;
 
 namespace ZombieController.Migrations
 {
@@ -19,7 +19,27 @@ namespace ZombieController.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ZombieController.Model.Zombie", b =>
+            modelBuilder.Entity("ZombieControl.Model.Command", b =>
+                {
+                    b.Property<Guid>("CommandId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CommandText");
+
+                    b.Property<DateTime>("RunAfter");
+
+                    b.Property<DateTime>("RunBefore");
+
+                    b.Property<Guid?>("ZombieId");
+
+                    b.HasKey("CommandId");
+
+                    b.HasIndex("ZombieId");
+
+                    b.ToTable("Commands");
+                });
+
+            modelBuilder.Entity("ZombieControl.Model.Zombie", b =>
                 {
                     b.Property<Guid>("ZombieId")
                         .ValueGeneratedOnAdd();
@@ -31,6 +51,13 @@ namespace ZombieController.Migrations
                     b.HasKey("ZombieId");
 
                     b.ToTable("Zombies");
+                });
+
+            modelBuilder.Entity("ZombieControl.Model.Command", b =>
+                {
+                    b.HasOne("ZombieControl.Model.Zombie", "Zombie")
+                        .WithMany()
+                        .HasForeignKey("ZombieId");
                 });
 #pragma warning restore 612, 618
         }
